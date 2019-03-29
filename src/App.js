@@ -16,9 +16,11 @@ class App extends Component {
     this.setState({
       play: !this.state.play },
       () => {
-      this.state.play ? this.audio.play() : this.audio.pause();
+        this.audio.play();
+        this.audio.currentTime = 0;
     });
   }
+
 
   render() {
     return (
