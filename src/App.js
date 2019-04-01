@@ -6,16 +6,17 @@ import DrumMachine from "./components/DrumMachine";
 class App extends Component {
   state = {
     play: false
-    //pause: true
   }
 
-  url = "https://freesound.org/data/previews/203/203567_3660887-lq.mp3";
-  audio = new Audio(this.url);
+  audio = new Audio();
 
-  clickHandler = () => {
+  clickHandler = (event) => {
+    const value  = event.target.value;
+
     this.setState({
       play: !this.state.play },
       () => {
+        this.audio.src = value;
         this.audio.play();
         this.audio.currentTime = 0;
     });
