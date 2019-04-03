@@ -24,7 +24,7 @@ const drumMachine = (props) => {
             </button>
 
             <button className="drum-pad"
-              id="Small Tom"
+              id="Small-Tom"
               onClick= {props.clickIt}
               >
               W
