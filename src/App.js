@@ -11,7 +11,9 @@ class App extends Component {
   audio = new Audio();
 
   clickHandler = (event) => {
-    const value  = event.target.value;
+    const value = document.getElementById(event.target.id)
+                      .getElementsByTagName("AUDIO")[0]
+                          .getAttribute("src")
 
     this.setState({
       play: !this.state.play },
@@ -22,7 +24,6 @@ class App extends Component {
     });
   }
 
-
   render() {
     return (
       <div className="App">
@@ -30,6 +31,8 @@ class App extends Component {
           <DrumMachine
               clickIt={this.clickHandler}
             />
+
+
 
 
       </div>
