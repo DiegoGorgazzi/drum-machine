@@ -8,9 +8,11 @@ class App extends Component {
     play: false
   }
 
-  audio = new Audio();
-
   clickHandler = (event) => {
+    let audio = document.getElementById(event.target.id)
+                  .getElementsByTagName("AUDIO")[0]
+
+
     const value = document.getElementById(event.target.id)
                       .getElementsByTagName("AUDIO")[0]
                           .getAttribute("src")
@@ -18,9 +20,9 @@ class App extends Component {
     this.setState({
       play: !this.state.play },
       () => {
-        this.audio.src = value;
-        this.audio.play();
-        this.audio.currentTime = 0;
+        audio.src = value;
+        audio.play();
+        audio.currentTime = 0;
     });
   }
 
