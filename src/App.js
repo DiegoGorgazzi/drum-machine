@@ -8,8 +8,45 @@ class App extends Component {
     play: false
   }
 
+  componentDidMount() {
+    document.addEventListener("keydown", this.keydownHandler)
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("keydown", this.keydownHandler)
+  }
+
+
+  keydownHandler = (event) => {
+
+    let x = event.key;
+
+    if (x === "q" || x === "Q") {
+      x = "Q";
+  }
+
+    console.log(event.key);
+
+    const audio = document.getElementById(x)
+                  //.getElementsByTagName("AUDIO")[0]
+
+    const value = document.getElementById(x).getAttribute("src")
+                      //.getElementsByTagName("AUDIO")[0]
+                          //.getAttribute("src")
+
+    this.setState({
+      play: !this.state.play },
+      () => {
+        audio.src = value;
+        audio.play();
+        audio.currentTime = 0;
+    });
+
+  }
+
+
   clickHandler = (event) => {
-    let audio = document.getElementById(event.target.id)
+    const audio = document.getElementById(event.target.id)
                   .getElementsByTagName("AUDIO")[0]
 
 
@@ -28,10 +65,12 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App"
+          >
 
           <DrumMachine
               clickIt={this.clickHandler}
+              keyPressed ={this.keydownHandler}
             />
 
 
