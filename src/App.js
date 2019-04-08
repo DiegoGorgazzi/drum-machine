@@ -19,25 +19,30 @@ class App extends Component {
 
   keydownHandler = (event) => {
 
+    let values, audios;
     let x = event.key;
 
-    if (x === "q" || x === "Q") {
-      x = "Q";
-  }
+    let ourKeys = ["Q", "W", "E", "A", "S", "D", "Z", "X", "C", "q",
+          "w", "e", "a", "s", "d", "z", "x", "c"];
 
-    console.log(event.key);
+    const inOurKeys = ourKeys.includes(x);
+      if (inOurKeys) {
+        x = x.toUpperCase();
+      values = document.getElementById(x).getAttribute("src");
+      audios = document.getElementById(x);
 
-    const audios = document.getElementById(x)
-    const values = document.getElementById(x).getAttribute("src");
-
-
-    this.setState({
-      play: !this.state.play },
-      () => {
-        audios.src = values;
-        audios.play();
-        audios.currentTime = 0;
-    });
+      this.setState({
+        play: !this.state.play },
+        () => {
+          audios.src = values;
+          audios.play();
+          audios.currentTime = 0;
+      });
+    } else {
+      this.setState({
+        play: this.state.play,
+      });
+    }
 
   }
 
