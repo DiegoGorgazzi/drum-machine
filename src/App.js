@@ -27,19 +27,16 @@ class App extends Component {
 
     console.log(event.key);
 
-    const audio = document.getElementById(x)
-                  //.getElementsByTagName("AUDIO")[0]
+    const audios = document.getElementById(x)
+    const values = document.getElementById(x).getAttribute("src");
 
-    const value = document.getElementById(x).getAttribute("src")
-                      //.getElementsByTagName("AUDIO")[0]
-                          //.getAttribute("src")
 
     this.setState({
       play: !this.state.play },
       () => {
-        audio.src = value;
-        audio.play();
-        audio.currentTime = 0;
+        audios.src = values;
+        audios.play();
+        audios.currentTime = 0;
     });
 
   }
@@ -70,7 +67,6 @@ class App extends Component {
 
           <DrumMachine
               clickIt={this.clickHandler}
-              keyPressed ={this.keydownHandler}
             />
 
 
