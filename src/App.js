@@ -28,8 +28,8 @@ class App extends Component {
     const inOurKeys = ourKeys.includes(x);
       if (inOurKeys) {
         x = x.toUpperCase();
-      values = document.getElementById(x).getAttribute("src");
       audios = document.getElementById(x);
+      values = document.getElementById(x).getAttribute("src");
 
       this.setState({
         play: !this.state.play },
@@ -56,13 +56,20 @@ class App extends Component {
                       .getElementsByTagName("AUDIO")[0]
                           .getAttribute("src")
 
+    const drumPadName = document.getElementById(event.target.id)
+                            .getAttribute("id")
+    console.log(drumPadName)
+
     this.setState({
+      display: drumPadName,
       play: !this.state.play },
       () => {
         audio.src = value;
         audio.play();
         audio.currentTime = 0;
-    });
+    },
+
+  );
   }
 
   render() {
@@ -72,9 +79,11 @@ class App extends Component {
 
           <DrumMachine
               clickIt={this.clickHandler}
-            />
 
+            >
+            <p> {this.state.display} </p>
 
+        </DrumMachine>
 
 
       </div>
