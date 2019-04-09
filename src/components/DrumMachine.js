@@ -1,5 +1,6 @@
 import React from "react";
 import "./DrumMachine.css";
+import {drumPadList} from "../shared/drumPadList";
 
 
 const drumMachine = (props) => {
@@ -9,16 +10,16 @@ const drumMachine = (props) => {
           <div id="display">
 
             <button className="drum-pad"
-              id="Crash-Cymbal"
+              id = {drumPadList[0].padName}
               onClick= {props.clickIt}
               >
-              Q
+              {drumPadList[0].audioIdKey}
 
               <audio
                 className="clip"
-                id="Q"
-                src="https://freesound.org/data/previews/203/203567_3660887-lq.mp3"
-                >
+                id={drumPadList[0].audioIdKey}
+                src={drumPadList[0].audioSrc}
+                                >
               </audio>
 
             </button>
