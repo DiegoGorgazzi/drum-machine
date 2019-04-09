@@ -20,22 +20,20 @@ class App extends Component {
 
   keydownHandler = (event) => {
 
-    let values, audios, drumPadName;
-    let x = event.key;
+    let values, audios, drumPadNames;
+    let x = event.key.toUpperCase();
 
-    let ourKeys = ["Q", "W", "E", "A", "S", "D", "Z", "X", "C", "q",
-          "w", "e", "a", "s", "d", "z", "x", "c"];
+    let ourKeys = ["Q", "W", "E", "A", "S", "D", "Z", "X", "C"];
 
     const inOurKeys = ourKeys.includes(x);
       if (inOurKeys) {
-        x = x.toUpperCase();
       audios = document.getElementById(x);
       values = document.getElementById(x).getAttribute("src");
 
-      drumPadName=  document.getElementById(x).parentNode.id;
+      drumPadNames=  document.getElementById(x).parentNode.id;
 
       this.setState({
-        display: drumPadName,
+        display: drumPadNames,
         play: !this.state.play },
         () => {
           audios.src = values;
@@ -54,7 +52,7 @@ class App extends Component {
   clickHandler = (event) => {
     const audio = event.target.firstElementChild
     const value = event.target.firstElementChild.src
-    const drumPadName = event.target.id  
+    const drumPadName = event.target.id
 
     this.setState({
       display: drumPadName,
