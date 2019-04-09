@@ -52,16 +52,9 @@ class App extends Component {
 
 
   clickHandler = (event) => {
-    const audio = document.getElementById(event.target.id)
-                  .getElementsByTagName("AUDIO")[0]
-
-
-    const value = document.getElementById(event.target.id)
-                      .getElementsByTagName("AUDIO")[0]
-                          .getAttribute("src")
-
-    const drumPadName = document.getElementById(event.target.id)
-                            .getAttribute("id")
+    const audio = event.target.firstElementChild
+    const value = event.target.firstElementChild.src
+    const drumPadName = event.target.id  
 
     this.setState({
       display: drumPadName,
