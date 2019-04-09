@@ -20,7 +20,7 @@ class App extends Component {
 
   keydownHandler = (event) => {
 
-    let values, audios, drumPadName, containerElementID;
+    let values, audios, drumPadName;
     let x = event.key;
 
     let ourKeys = ["Q", "W", "E", "A", "S", "D", "Z", "X", "C", "q",
