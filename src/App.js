@@ -5,6 +5,7 @@ import DrumMachine from "./components/DrumMachine";
 
 class App extends Component {
   state = {
+    display: "",
     play: false
   }
 
@@ -19,7 +20,7 @@ class App extends Component {
 
   keydownHandler = (event) => {
 
-    let values, audios;
+    let values, audios, drumPadName, containerElementID;
     let x = event.key;
 
     let ourKeys = ["Q", "W", "E", "A", "S", "D", "Z", "X", "C", "q",
@@ -31,7 +32,10 @@ class App extends Component {
       audios = document.getElementById(x);
       values = document.getElementById(x).getAttribute("src");
 
+      drumPadName=  document.getElementById(x).parentNode.id;
+
       this.setState({
+        display: drumPadName,
         play: !this.state.play },
         () => {
           audios.src = values;
@@ -58,7 +62,6 @@ class App extends Component {
 
     const drumPadName = document.getElementById(event.target.id)
                             .getAttribute("id")
-    console.log(drumPadName)
 
     this.setState({
       display: drumPadName,
