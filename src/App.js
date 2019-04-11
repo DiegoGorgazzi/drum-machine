@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import DrumMachine from "./components/DrumMachine";
+import DrumPad from "./components/DrumPad";
 
 
 class App extends Component {
@@ -63,15 +64,22 @@ class App extends Component {
   }
 
   render() {
+
     return (
       <div className="App"
           >
 
-          <DrumMachine
-              clickIt={this.clickHandler}
+        <DrumMachine
 
             >
-            <p> {this.state.display} </p>
+            <DrumPad
+                clickIt={this.clickHandler}
+                />
+
+              <p> {this.state.display} </p>
+
+
+
 
         </DrumMachine>
 
