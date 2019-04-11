@@ -20,7 +20,7 @@ class App extends Component {
 
   keydownHandler = (event) => {
 
-    let values, audios, drumPadNames;
+    let audios, drumPadNames;
     let x = event.key.toUpperCase();
 
     let ourKeys = ["Q", "W", "E", "A", "S", "D", "Z", "X", "C"];
