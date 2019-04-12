@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import DrumMachine from "./components/DrumMachine";
 import DrumPad from "./components/DrumPad";
-
+import {drumPadList} from "./shared/drumPadList";
 
 class App extends Component {
   state = {
@@ -11,20 +11,23 @@ class App extends Component {
   }
 
   componentDidMount() {
-    document.addEventListener("keydown", this.keydownHandler)
+    document.addEventListener("keydown", this.keydownHandler);
   }
 
   componentWillUnmount() {
     document.removeEventListener("keydown", this.keydownHandler)
   }
 
-
   keydownHandler = (event) => {
 
     let audios, drumPadNames;
-    let x = event.key.toUpperCase();
+    const x = event.key.toUpperCase();
 
-    let ourKeys = ["Q", "W", "E", "A", "S", "D", "Z", "X", "C"];
+    const ourKeys = [];
+    drumPadList.map((item) =>
+        { return ourKeys.push(item.audioIdKey);
+        }
+      );
 
     const inOurKeys = ourKeys.includes(x);
       if (inOurKeys) {
@@ -41,7 +44,7 @@ class App extends Component {
       });
     } else {
       this.setState({
-        play: this.state.play,
+        play: this.state.play
       });
     }
 
