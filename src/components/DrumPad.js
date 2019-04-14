@@ -9,6 +9,7 @@ const drumPad = (props) => drumPadList.map((item, index) =>
           id = {item.padName}
           onClick= {props.clickIt}
           key={index}
+          style = {props.styleIt}
           >
           {item.audioIdKey}
 
