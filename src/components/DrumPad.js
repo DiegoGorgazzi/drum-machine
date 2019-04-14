@@ -1,6 +1,6 @@
 import React from "react";
 import {drumPadList} from "../shared/drumPadList";
-
+import "./DrumPad.css"
 
 const drumPad = (props) => drumPadList.map((item, index) =>
 
