@@ -2,8 +2,9 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  align-items: center;
   min-height: 100vh;
-  background-color: white;
+  background-color: black;
   text-align: center;
   font-size: calc(10px + 2vmin);
 }
@@ -11,24 +12,31 @@
 
 h1 {
   margin:5%;
+  color: white;
 }
 
 h3 {
   margin-top: -5%;
   font-style: oblique;
+  color: white;
 }
 
 .appAuthor {
   font-size: calc(7px + 2vmin);
   margin-top:-5%;
   font-style: italic;
+  color: white;
 }
 
 .drum-name {
   padding: 15px 25px;
-  font-size: 16px;
+  font-size: 20px;
   text-align: center;
   font-weight:900;
   color: black;
   margin: 8px;
+}
+
+a {
+  color: white;
 }
