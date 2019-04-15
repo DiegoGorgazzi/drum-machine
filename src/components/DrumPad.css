@@ -1,7 +1,6 @@
 .drum-pad {
   padding: 15px 25px;
-  box-sizing: border-box;
-  font-size: 14px;
+  font-size: calc(10px + 2vmin);
   cursor: pointer;
   text-align: center;
   font-weight: bold;
