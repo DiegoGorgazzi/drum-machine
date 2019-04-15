@@ -2,6 +2,9 @@ import React from "react";
 import {drumPadList} from "../shared/drumPadList";
 import "./DrumPad.css"
 
+
+
+
 const drumPad = (props) => drumPadList.map((item, index) =>
 
        {return (
@@ -9,7 +12,8 @@ const drumPad = (props) => drumPadList.map((item, index) =>
           id = {item.padName}
           onClick= {props.clickIt}
           key={index}
-          style = {props.styleIt}
+          style = {props.myValue === item.audioIdKey ? props.styleIt : null}
+          value = {props.myValue}
           >
           {item.audioIdKey}
 

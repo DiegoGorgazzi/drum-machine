@@ -6,7 +6,7 @@ import {drumPadList} from "./shared/drumPadList";
 
 class App extends Component {
   state = {
-    myStyle: {},
+    keyPressed: "",
     keyDownPressed: false,
     display: "",
     play: false
@@ -35,18 +35,19 @@ class App extends Component {
     let audios, drumPadNames;
     const x = event.key.toUpperCase();
     const ourKeys = [];
+
     drumPadList.map((item) =>
-        { return ourKeys.push(item.audioIdKey);
-        }
+        { return ourKeys.push(item.audioIdKey)}
       );
 
     const inOurKeys = ourKeys.includes(x);
-      if (inOurKeys) {
+    if (inOurKeys) {
         audios = document.getElementById(x);
         drumPadNames=  document.getElementById(x).parentNode.id;
 
         this.setState({
               keyDownPressed: true,
+              keyPressed: x,
               display: drumPadNames,
               play: !this.state.play },
               () => {
@@ -55,12 +56,11 @@ class App extends Component {
               }
             );
 
-      } else {
+    } else {
         this.setState({
           play: this.state.play
         });
-      }
-
+    }
   }
 
 
@@ -76,15 +76,13 @@ class App extends Component {
         audio.play();
         audio.currentTime = 0;
       }
-  );
+    );
   }
 
   render() {
 
-  let stylish;
-
-    console.log(this.state.keyDownPressed, " inside render")
-
+    //Conditional styling on keydown and keyup
+    let stylish;
     if(this.state.keyDownPressed) {
       stylish = {
           backgroundColor: "#3e8e41",
@@ -95,21 +93,15 @@ class App extends Component {
 
 
     return (
-      <div className="App"
-          >
+      <div className="App">
 
-        <DrumMachine
-
-            >
+        <DrumMachine>
             <DrumPad
                 clickIt={this.clickHandler}
                 styleIt={stylish}
+                myValue = {this.state.keyPressed}
                 />
               <p> {this.state.display} </p>
-
-
-
-
         </DrumMachine>
 
 
