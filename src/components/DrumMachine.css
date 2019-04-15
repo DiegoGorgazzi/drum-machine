@@ -1,13 +1,16 @@
 #drum-machine {
+  background-color: white;
+  width: 70%;
+  min-width: 250px;
+  border-radius: 20px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  background-color: #ffca6b;
-  margin: 5px;
+  justify-content: center;
+  align-self: center;
 }
 
 #display {
+  margin-top: 16px;
 
-  margin: 8px;
-  background-color: yellow;
 }
