@@ -95,6 +95,12 @@ class App extends Component {
     return (
       <div className="App">
 
+        <div>
+          <h1>Drum Simulator</h1>
+          <h3>a Reactive Responsive App</h3>
+          <p className="appAuthor">by <a href="https://github.com/DiegoGorgazzi">me</a></p>
+        </div>
+
         <DrumMachine>
             <DrumPad
                 clickIt={this.clickHandler}
