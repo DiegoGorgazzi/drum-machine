@@ -1,0 +1,13 @@
+#drum-machine {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffca6b;
+  margin: 5px;
+}
+
+#display {
+
+  margin: 8px;
+  background-color: yellow;
+}

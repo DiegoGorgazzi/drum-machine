@@ -85,7 +85,7 @@ class App extends Component {
     let stylish;
     if(this.state.keyDownPressed) {
       stylish = {
-          backgroundColor: "#3e8e41",
+          backgroundColor: "#0033cc",
           boxShadow: "0 5px #666",
           transform: "translateY(4px)",
       };
@@ -101,7 +101,9 @@ class App extends Component {
                 styleIt={stylish}
                 myValue = {this.state.keyPressed}
                 />
+              <div className="drum-name">
               <p> {this.state.display} </p>
+            </div>
         </DrumMachine>
 
 

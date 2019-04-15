@@ -1,3 +1,34 @@
 .App {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: white;
   text-align: center;
+  font-size: calc(10px + 2vmin);
+}
+
+
+h1 {
+  margin:5%;
+}
+
+h3 {
+  margin-top: -5%;
+  font-style: oblique;
+}
+
+.appAuthor {
+  font-size: calc(7px + 2vmin);
+  margin-top:-5%;
+  font-style: italic;
+}
+
+.drum-name {
+  padding: 15px 25px;
+  font-size: 16px;
+  text-align: center;
+  font-weight:900;
+  color: black;
+  margin: 8px;
 }
